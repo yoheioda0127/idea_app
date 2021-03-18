@@ -18,6 +18,13 @@ class IdeasController < ApplicationController
     end
   end
 
+  def search
+    if params[:category_id].present?
+      @idea = Idea.where('category_id LIKE ?', "%#{params[:id]}%")
+    else
+      @idea = Idea.none
+    end
+  end
 
 
   

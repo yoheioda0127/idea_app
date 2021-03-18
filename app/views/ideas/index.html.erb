@@ -1,3 +1,12 @@
+<h1>検索ボックス</h1>
+<%= form_with url: search_ideas_path, method: :get, local: true do |f| %>
+    <%# <%= f.label :idea, "ラベル" %> %>
+    <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class: "", id:"weather_id"}) %>
+    <%= f.submit :search %>
+<% end %>
+
+
+
 <% @ideas.each do |idea| %>
 
   <%= idea.body %><%= idea.created_at%><%#= idea.category_id.name%>

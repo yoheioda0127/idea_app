@@ -1,0 +1,14 @@
+  <%= form_for(@category) do |t|%>
+
+    <div><%= t.text_field :name, autofocus: true, placeholder: "　新規カテゴリー登録 ", class: "field-1" %></div>
+  
+  <% end %>
+
+
+<%= form_for(@idea) do |f|%>
+
+  <div ><%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class: "", id:"weather_id"}) %></div>
+
+  <div><%= f.text_field :body, autofocus: true, placeholder: "　（例）アイディアを書く", class: "field-1" %></div>
+
+<% end %>

@@ -1,3 +1,69 @@
-// Place all the styles related to the ideas controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.whole-wrapper{
+  width: 1000px;
+  height: auto;
+  padding-bottom: 20px;
+  margin: 5px auto;
+  background-color: rgb(255, 255, 255);
+  
+  .top-wrapper{
+    background-color: rgb(255, 254, 221);
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 5px 6px rgb(179, 179, 179);
+
+    .new-box{
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      justify-content: space-around;
+      align-items: center;
+      text-decoration: none;
+
+      .new-button {
+        width: 120px;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        padding: 0 25px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        color: rgb(255, 255, 255);
+        background: rgb(255, 145, 0);
+        border: solid 3px rgb(255, 115, 0);
+        border-radius: 10px;
+        text-decoration: none;
+        font-size: 40px;
+        box-shadow: 0 5px 6px rgb(179, 179, 179);
+      }
+      .new-button:hover {
+        color: white;
+        background-color: orangered;
+        border: solid 3px orangered;
+      }
+    }
+  
+    .sort-box{
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      left: 0;
+
+      .sort-pull{
+        width: 50px;
+        font-size: 20px;
+      }
+      .sort-button{
+        width: 50px;
+        font-size: 20px;
+      }
+    }
+
+  }
+  .index-wrapper{
+
+  }
+}

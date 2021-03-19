@@ -1,17 +1,25 @@
-<div class= "top-wrapper">
-  <%# <h1>検索ボックス</h1> %>
-  <%= form_with url: search_ideas_path, method: :get, local: true do |f| %>
-      <%# <%= f.label :idea, "ラベル" %>
-      <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class: "", id:"weather_id"}) %>
-      <%= f.submit :search %>
-  <% end %>
-</div>
+<div class = "whole-wrapper">
+  <div class= "top-wrapper">
+    <%# <h1>検索ボックス</h1> %>
+    <div class="new-box">
+    <%= form_with url: search_ideas_path, method: :get, local: true do |f| %>
+        <%# <%= f.label :idea, "ラベル" %>
+          <%= link_to '+', "/ideas/new", class: "new-button" %>
+        </div>
+        
+        <div class= "soat-box">
+          <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class: "sort-pull", id:"weather_id"}) %>
+          <%= f.submit :ソートする, class: "sort-button" %>
+    <% end %>
+    </div>
+  </div>
 
-<div class= "second-wrapper">
-  <%# <h1>アイディア一覧</h1> %>
-  <div>
-    <% @ideas.each do |idea| %>
-      <div><%= idea.body %><%= idea.created_at%><%#= idea.category_id.name%></div>
-    <%end%>
+  <div class= "index-wrapper">
+    <%# <h1>アイディア一覧</h1> %>
+    <div>
+      <% @ideas.each do |idea| %>
+        <div><%= idea.body %><%= idea.created_at%><%#= idea.category_id.name%></div>
+      <%end%>
+    </div>
   </div>
 </div>

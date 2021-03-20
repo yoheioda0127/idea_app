@@ -19,11 +19,22 @@
     <% if @ideas.present? %>
       <div class = "index-box">
         <% @ideas.each do |idea| %>
-          <div class="index-cotents">
-            <div>◯　<%= idea.body.truncate(8) %></div>
-            <div class = "right-contents"> 
-              <div><%= idea.created_at.strftime('%Y年%m月%d日')%></div>
-              <div class = "category-badge"><%= @category.name.truncate(13) %></div>
+          <div class="index-box-contents"> 
+            <div class="index-contents">
+              <div>◯　<%= idea.body.truncate(8) %></div>
+              <div class = "right-contents"> 
+                <div><%= idea.created_at.strftime('%Y年%m月%d日')%></div>
+                <div class = "category-badge"><%= @category.name.truncate(13) %></div>
+              </div>
+            </div>
+            <div class="hidden_box">
+                <input type="checkbox" id="label1" />
+                <label for="label1">詳細の表示</label>
+                <div class="hidden_show">
+                  <!--非表示ここから-->
+                  <%= idea.body %>
+                  <!--ここまで-->
+                </div>
             </div>
           </div>
         <%end%>
@@ -32,4 +43,9 @@
       <div class="index-dummy-word">まだアイディアがありません。<br>あなたのアイディアを記録しましょう！</div>
     <%end%>
   </div>
+</div>
+
+<div class='purchase-btn'>
+    <%# <%= image_tag 'app_logo_imgapp-logo.png', size: '185x50', class: "purchase-btn-icon" %> 
+    <%= link_to image_tag("app-logo.png", class: "purchase-btn-icon"), "/" %>
 </div>

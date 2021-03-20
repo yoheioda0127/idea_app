@@ -12,9 +12,9 @@ class IdeasController < ApplicationController
   def create
     @idea = Idea.new(idea_params)
     if @idea.save
-      redirect_to action: :index
+      render action: :index
     else
-      render :new
+      render action: :index
     end
   end
 

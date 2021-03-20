@@ -7,18 +7,16 @@ class CategorysController < ApplicationController
   def create
     @category = Category.new(category_params)
     if @category.save
-      redirect_to new_idea_path
+      render :index 
     else
-      redirect_to new_idea_path
+      render :index
     end
   end
 
   private
 
   def category_params
-    binding.pry
-    params.require(:category).permit(:name)
-    binding.pry
+    params.permit(:name)
   end
 
 end

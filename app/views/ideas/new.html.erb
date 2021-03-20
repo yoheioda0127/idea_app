@@ -1,12 +1,13 @@
 <div class = "whole-wrapper">
-  <%= form_for(@idea) do |f|%>
+  <%= form_with(model: @idea, local: true) do |f|%>
     <div ><%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class: "", id:"category-id"}) %></div>
     <div><%= f.text_area :body, autofocus: true, placeholder: "　（例）アイディアを書く", class: "post-text-field" %></div>
     <%= f.submit "登録する", class: "new-edit-actions" %>
   <% end %>
 
-  <%= form_with id: 'charge-form', class: 'transaction-form-wrap',url: categorys_path, local: true do |t| %> 
-    <div><%= t.text_field :name, autofocus: true, placeholder: "　カテゴリー名 ", class: "field-1"%></div>
+  <%= form_with(model: @category, local: true) do |t|%>
+  <%# <%= form_with id: 'charge-form', class: 'transaction-form-wrap',url: categorys_path, local: true do |t| %> 
+    <%= t.text_field :name, autofocus: true, placeholder: "　カテゴリー名 ", class: "field-1"%>
     <%= t.submit "カテゴリー作成", class: "new-edit-actions" %>
   <% end %>
   <%= link_to "一覧へ戻る", :back  ,class: "show-back"%>

@@ -13,7 +13,10 @@
     justify-content: space-around;
     align-items: center;
     box-shadow: 0 5px 6px rgb(179, 179, 179);
-
+    .app_logo_img{
+      width: auto;
+      height: 100px;
+    }
     .new-box{
       height: 70px;
       justify-content: space-around;
@@ -68,34 +71,40 @@
     padding: 30px 20px;
     
     .index-box{
-      .index-cotents{
-        font-size: 25px;
-        display: flex;
-        justify-content: space-between;
+      .index-box-contents{
         margin-bottom: 70px;
-        .right-contents{
+        .index-contents{
+          font-size: 25px;
           display: flex;
-          justify-content: center;
-          .category-badge{
-            width: auto;
-            height: auto;
+          justify-content: space-between;
+          .right-contents{
             display: flex;
             justify-content: center;
-            align-items: center;
-            padding: 0 25px;
-            margin-left: 35px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: bold;
-            color: rgb(255, 255, 255);
-            background: rgb(0, 17, 255);
-            border: solid 3px rgb(0, 2, 143);
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 20px;
+            .category-badge{
+              width: auto;
+              height: auto;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 0 25px;
+              margin-left: 35px;
+              font-family: Arial, Helvetica, sans-serif;
+              font-weight: bold;
+              color: rgb(255, 255, 255);
+              background: rgb(0, 17, 255);
+              border: solid 3px rgb(0, 2, 143);
+              border-radius: 5px;
+              text-decoration: none;
+              font-size: 20px;
+            }
           }
+        }
+        .detail-contents{
+          display: none;
         }
       }
     }
+    
     .index-dummy-word {
       display: flex;
       justify-content: center;
@@ -105,8 +114,26 @@
       line-height: 60px;
     }
   }
-
-  
-
 }
 
+.purchase-btn {
+  width: 120px;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+  opacity: 0.5;
+}
+.purchase-btn-text {
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+.purchase-btn-icon {
+  width: 140px;
+  height: auto;
+}

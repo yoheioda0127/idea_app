@@ -15,11 +15,21 @@
   </div>
 
   <div class= "index-wrapper">
-    <%# <h1>アイディア一覧</h1> %>
-    <div>
-      <% @ideas.each do |idea| %>
-        <div><%= idea.body %><%= idea.created_at%><%#= idea.category_id.name%></div>
-      <%end%>
-    </div>
+    <%# アイディア一覧 %>
+    <% if @ideas.present? %>
+      <div class = "index-box">
+        <% @ideas.each do |idea| %>
+          <div class="index-cotents">
+            <div>◯　<%= idea.body.truncate(8) %></div>
+            <div class = "right-contents"> 
+              <div><%= idea.created_at.strftime('%Y年%m月%d日')%></div>
+              <div class = "category-badge"><%= @category.name.truncate(13) %></div>
+            </div>
+          </div>
+        <%end%>
+      </div>
+    <%else%>
+      <div class="index-dummy-word">まだアイディアがありません。<br>あなたのアイディアを記録しましょう！</div>
+    <%end%>
   </div>
 </div>

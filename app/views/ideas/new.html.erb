@@ -1,14 +1,13 @@
-  <%# <%= form_for(@category) do |t|%>
+<div class = "whole-wrapper">
+  <%= form_for(@idea) do |f|%>
+    <div ><%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class: "", id:"category-id"}) %></div>
+    <div><%= f.text_area :body, autofocus: true, placeholder: "　（例）アイディアを書く", class: "post-text-field" %></div>
+    <%= f.submit "登録する", class: "new-edit-actions" %>
+  <% end %>
 
-    <%# <div><%= t.text_field :name, autofocus: true, placeholder: "　新規カテゴリー登録 ", class: "field-1" %></div> %>
-  
-  <%# <% end %> %> %>
-
-
-<%= form_for(@idea) do |f|%>
-
-  <div ><%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class: "", id:"weather_id"}) %></div>
-
-  <div><%= f.text_field :body, autofocus: true, placeholder: "　（例）アイディアを書く", class: "field-1" %></div>
-
-<% end %>
+  <%= form_with id: 'charge-form', class: 'transaction-form-wrap',url: categorys_path, local: true do |t| %> 
+    <div><%= t.text_field :name, autofocus: true, placeholder: "　カテゴリー名 ", class: "field-1"%></div>
+    <%= t.submit "カテゴリー作成", class: "new-edit-actions" %>
+  <% end %>
+  <%= link_to "一覧へ戻る", :back  ,class: "show-back"%>
+</div>

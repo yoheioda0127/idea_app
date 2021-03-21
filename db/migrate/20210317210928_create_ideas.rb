@@ -3,7 +3,7 @@ class CreateIdeas < ActiveRecord::Migration[6.0]
     create_table :ideas do |t|
 
       t.integer :category_id, null: false, foreign_key: true
-      t.text    :body
+      t.text    :body, null: false
 
       t.timestamps
     end

@@ -10,9 +10,9 @@ class CategorysController < ApplicationController
   def create
     @category = Category.new(category_params)
     if @category.save
-      render '/ideas'
+      eturn redirect_to root_path
     else
-      render '/ideas'
+      return redirect_to root_path
     end
   end
 

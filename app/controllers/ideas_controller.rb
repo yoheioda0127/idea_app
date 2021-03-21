@@ -10,9 +10,9 @@ class IdeasController < ApplicationController
   def create
     @idea = Idea.new(idea_params)
     if @idea.save
-      render :index
+      return redirect_to root_path
     else
-      render :index
+      return redirect_to root_path
     end
   end
 

@@ -3,7 +3,7 @@
     <%# <h1>検索ボックス</h1> %>
     <div class="new-box">
     <%= form_with url: search_ideas_path, method: :get, local: true do |f| %>
-        <%# <%= f.label :idea, "ラベル" %>
+        <div>
           <%= link_to '+', "/ideas/new", class: "new-button" %>
         </div>
         
@@ -24,17 +24,19 @@
               <div>◯　<%= idea.body.truncate(8) %></div>
               <div class = "right-contents"> 
                 <div><%= idea.created_at.strftime('%Y年%m月%d日')%></div>
-                <div class = "category-badge"><%= @category.name.truncate(13) %></div>
+                <div class = "category-badge"><%= idea.category_id.name.truncate(13) %></div>
+                <div><%= button_to "削除", idea_path(idea.id), class: "delete-button", data: {confirm: "アイディアを削除しますか?"}, method: :delete %></div>
               </div>
             </div>
-            <div class="hidden_box">
-                <input type="checkbox" id="label1" />
-                <label for="label1">詳細の表示</label>
-                <div class="hidden_show">
-                  <!--非表示ここから-->
-                  <%= idea.body %>
-                  <!--ここまで-->
+            <div class="fx1">
+              <div class="checkedexample">
+                <label for="labeltest">
+                <span class="fx2">詳細表示</span></label>
+                <input type="checkbox" id="labeltest"/>
+                <div class="appear">
+                  <p><%= idea.body.truncate(8) %></p>
                 </div>
+              </div>
             </div>
           </div>
         <%end%>

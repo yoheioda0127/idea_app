@@ -1,59 +1,42 @@
-/*全体*/
-.hidden_box {
-  margin: 2em 0;
-  padding: 0;
-}
+.fx1 {
+  padding: 10px 40px;
+  position:relative;
+  max-width:800px;
+  width:100%;
+  height:auto;
 
-/*ボタン装飾*/
-.hidden_box label {
-  padding: 15px;
-  font-weight: bold;
-  background: #efefef;
+}
+.fx2 {
+  margin: 0 50px;
+  max-width:450px;
+  background-color: green;
   border-radius: 5px;
-  cursor :pointer;
-  transition: .5s;
+  border: 1px solid rgb(2, 90, 2);
+  color:white;
+  padding:3px 10px;
+  font-weight:bold;
+  overflow:visible;
+}
+.fx2:hover{
+  background-color: grey;
 }
 
-/*アイコンを表示*/
-.hidden_box label:before {
-  display: inline-block;
-  content: '\f078';
-  font-family: 'FontAwesome';
-  padding-right: 5px;
-  transition: 0.2s;
-}
-
-/*ボタンホバー時*/
-.hidden_box label:hover {
-  background: silver;
-}
-
-/*アイコンを切り替え*/
-.hidden_box input:checked ~ label:before {
-   content: '\f00d';
-   -webkit-transform: rotate(360deg);
-   transform: rotate(360deg);
-   color: #668ad8;
-}
-
-/*チェックは見えなくする*/
-.hidden_box input {
+.checkedexample input {
   display: none;
 }
 
-/*中身を非表示にしておく*/
-.hidden_box .hidden_show {
-  background-color: antiquewhite;
-  height: 40px;
-  padding: 0;
+.checkedexample .appear {
+  height: 0;
+  margin: 0 auto;
+  padding: 0 50px;
   overflow: hidden;
   opacity: 0;
   transition: 0.8s;
 }
 
-/*クリックで中身表示*/
-.hidden_box input:checked ~ .hidden_show {
+.checkedexample input:checked ~ .appear {
   padding: 10px 0;
   height: auto;
   opacity: 1;
+  font-size: 20px;
 }

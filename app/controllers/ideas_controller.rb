@@ -1,7 +1,7 @@
 class IdeasController < ApplicationController
   
   def index
-    @ideas = Idea.all
+    @ideas = Idea.all.order("created_at DESC")
     @category = Category.all
   end
 
@@ -14,6 +14,11 @@ class IdeasController < ApplicationController
     @idea = Idea.new(idea_params)
     @category = Category.new(category_params)
     if @idea.save
+      render :index
+    else
+      render :index
+    end
+    if @category.save
       render :new
     else
       render :new
@@ -42,7 +47,7 @@ class IdeasController < ApplicationController
   end
 
   def category_params
-    params.permit(:name)
+    params.require(:category).permit(:name)
   end
 
 end

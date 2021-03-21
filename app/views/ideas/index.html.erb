@@ -1,18 +1,18 @@
 <div class = "whole-wrapper">
-  <div class= "top-wrapper">
+  
     <%# <h1>検索ボックス</h1> %>
-    <div class="new-box">
     <%= form_with url: search_ideas_path, method: :get, local: true do |f| %>
-        <div>
+    <div class= "top-wrapper">
+        <div class="new-box">
           <%= link_to '+', "/ideas/new", class: "new-button" %>
         </div>
         
-        <div class= "soat-box">
+        <div class= "sort-box">
           <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class: "sort-pull", id:"weather_id"}) %>
           <%= f.submit :ソートする, class: "sort-button" %>
+        </div>
+      </div>
     <% end %>
-    </div>
-  </div>
 
   <div class= "index-wrapper">
     <%# アイディア一覧 %>
@@ -21,23 +21,37 @@
         <% @ideas.each do |idea| %>
           <div class="index-box-contents"> 
             <div class="index-contents">
-              <div>◯　<%= idea.body.truncate(8) %></div>
-              <div class = "right-contents"> 
-                <div><%= idea.created_at.strftime('%Y年%m月%d日')%></div>
-                <div class = "category-badge"><%= idea.category_id.name.truncate(13) %></div>
-                <div><%= button_to "削除", idea_path(idea.id), class: "delete-button", data: {confirm: "アイディアを削除しますか?"}, method: :delete %></div>
+              <div class="index-contents-body">
+                ◯　<%= idea.body.truncate(8) %>
               </div>
-            </div>
-            <div class="fx1">
-              <div class="checkedexample">
-                <label for="labeltest">
-                <span class="fx2">詳細表示</span></label>
-                <input type="checkbox" id="labeltest"/>
-                <div class="appear">
-                  <p><%= idea.body.truncate(8) %></p>
+              <div class = "right-contents"> 
+                <div class = "category-badge">
+                  <%= idea.category.name %>
+                </div>
+                <div class = "post-date">
+                  <%= idea.created_at.strftime('%Y年%m月%d日')%>
+                </div>
+                <div>
+                  <%= button_to "削除する", idea_path(idea.id), class: "delete-button", data: {confirm: "アイディアを削除しますか?"}, method: :delete %>
                 </div>
               </div>
             </div>
+
+            <div class="body-wrapper">
+            
+              <div class="open-checked">
+                <label for="label-box">
+                  <span class="body-open-button">全文を表示</span>
+                </label>
+                <input type="checkbox" id="label-box"/>
+
+                <div class="appear">
+                  <%= safe_join(idea.body.split("\n"),tag(:br)) %>
+                </div>
+              </div>
+
+            </div>
+
           </div>
         <%end%>
       </div>
@@ -47,7 +61,6 @@
   </div>
 </div>
 
-<div class='purchase-btn'>
-    <%# <%= image_tag 'app_logo_imgapp-logo.png', size: '185x50', class: "purchase-btn-icon" %> 
-    <%= link_to image_tag("app-logo.png", class: "purchase-btn-icon"), "/" %>
+<div class='app-logo-box'>
+    <%= link_to image_tag("app-logo.png", class: "app-logo-icon"), "/" %>
 </div>

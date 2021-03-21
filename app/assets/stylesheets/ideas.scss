@@ -13,37 +13,26 @@
     justify-content: space-around;
     align-items: center;
     box-shadow: 0 5px 6px rgb(179, 179, 179);
-    .app_logo_img{
-      width: auto;
-      height: 100px;
-    }
-    .new-box{
-      height: 70px;
-      justify-content: space-around;
-      align-items: center;
+    .new-button {
+      width: 120px;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      padding: 0 25px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      color: rgb(255, 255, 255);
+      background: rgb(255, 145, 0);
+      border: solid 3px rgb(255, 115, 0);
+      border-radius: 10px;
       text-decoration: none;
-
-      .new-button {
-        width: 120px;
-        height: auto;
-        display: flex;
-        justify-content: center;
-        padding: 0 25px;
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: bold;
-        color: rgb(255, 255, 255);
-        background: rgb(255, 145, 0);
-        border: solid 3px rgb(255, 115, 0);
-        border-radius: 10px;
-        text-decoration: none;
-        font-size: 40px;
-        box-shadow: 0 5px 6px rgb(179, 179, 179);
-      }
-      .new-button:hover {
-        color: white;
-        background-color: orangered;
-        border: solid 3px orangered;
-      }
+      font-size: 40px;
+      box-shadow: 0 5px 6px rgb(179, 179, 179);
+    }
+    .new-button:hover {
+      color: white;
+      background-color: orangered;
+      border: solid 3px orangered;
     }
   
     .sort-box{
@@ -51,36 +40,62 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      left: 0;
+      
 
       .sort-pull{
-        width: 50px;
+        width: 100px;
         font-size: 20px;
       }
       .sort-button{
-        width: 50px;
+        width: 120px;
         font-size: 20px;
+        margin-left: 20px;
       }
     }
-
   }
 
 
   .index-wrapper{
-    margin: 20px 30px;
-    padding: 30px 20px;
+    margin: 20px 70px;
+    padding: 20px 40px;
+    display: block;
     
     .index-box{
       .index-box-contents{
-        margin-bottom: 70px;
+        margin-bottom: 50px;
+        border-bottom: 0.5px solid rgb(146, 146, 146);
         .index-contents{
-          font-size: 25px;
           display: flex;
           justify-content: space-between;
+          align-items: center;
+          .index-contents-body {
+            font-size: 25px;
+          }
           .right-contents{
             display: flex;
             justify-content: center;
+            .post-date{
+              display: flex;
+              align-items: center;
+              font-size: 15px;
+            }
             .category-badge{
+              width: auto;
+              height: auto;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 0 25px;
+              margin-right: 35px;
+              font-family: Arial, Helvetica, sans-serif;
+              font-weight: bold;
+              color: rgb(7, 7, 7);
+              border: solid 2px rgb(0, 0, 0);
+              border-radius: 5px;
+              text-decoration: none;
+              font-size: 20px;
+            }
+            .delete-button{
               width: auto;
               height: auto;
               display: flex;
@@ -90,19 +105,57 @@
               margin-left: 35px;
               font-family: Arial, Helvetica, sans-serif;
               font-weight: bold;
-              color: rgb(255, 255, 255);
-              background: rgb(0, 17, 255);
-              border: solid 3px rgb(0, 2, 143);
-              border-radius: 5px;
+              color: rgb(255, 1, 1);
+              background: rgb(255, 255, 255);
+              border: solid 3px rgb(255, 255, 255);
               text-decoration: none;
-              font-size: 20px;
+              font-size: 15px;
+            }
+            .delete-button:hover{
+              color: rgb(82, 7, 7);
             }
           }
         }
-        .detail-contents{
+      }
+      // 内容展開ボタン
+      .body-wrapper {
+        padding: 10px 40px;
+        position:relative;
+        max-width:800px;
+        width:100%;
+        height:auto;
+        .body-open-button {
+          margin: 0 30px;
+          max-width:450px;
+          background-color: green;
+          border-radius: 5px;
+          border: 1px solid rgb(2, 90, 2);
+          color:white;
+          padding:3px 10px;
+          font-weight:bold;
+        }
+        .body-open-button:hover{
+          background-color: grey;
+        }
+        .open-checked input {
           display: none;
         }
+        .appear {
+          height: 0;
+          margin: 0 auto;
+          padding: 0 50px;
+          overflow: hidden;
+          opacity: 0;
+          transition: 1.0s;
+        }
+        .open-checked input:checked ~ .appear {
+          padding: 10px 0;
+          height: auto;
+          opacity: 1;
+          font-size: 20px;
+        }
       }
+      // 内容展開ボタン
     }
     
     .index-dummy-word {
@@ -114,9 +167,54 @@
       line-height: 60px;
     }
   }
+  .new-sort-box{
+    margin-top: 20px;
+    width: 100px;
+    font-size: 20px;
+    border-radius: 5px;
+  }
+  .body-field{
+    margin-top: 10px;
+    width: 1000px;
+    height: 200px;
+    font-size: 18px;
+    border-radius: 5px;
+  }
+  .new-category-name{
+    width: 300px;
+    height: 30px;
+    font-size: 18px;
+    border-radius: 5px;
+  }
+  .new-category-actions{
+    margin-top: 30px;
+    width: 200px;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  .body-field-actions-box{
+    padding-top: 40px;
+    border-bottom: 0.5px solid rgb(169, 189, 255);
+  }
+  .body-field-actions{
+    width: 200px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  .show-back-box{
+    margin-top: 50px;
+  }
+  .show-back{
+    color: black;
+    font-size: 18px;
+  }
+  .show-back:hover{
+    color: rgb(6, 43, 255);
+  }
 }
 
-.purchase-btn {
+.app-logo-box {
   width: 120px;
   text-align: center;
   border-radius: 4%;
@@ -126,14 +224,7 @@
   padding: 15px;
   opacity: 0.5;
 }
-.purchase-btn-text {
-  color: #fff;
-  display: block;
-  font-size: 18px;
-  text-decoration: none;
-  margin-bottom: 5px;
-}
-.purchase-btn-icon {
+.app-logo-icon {
   width: 140px;
   height: auto;
 }

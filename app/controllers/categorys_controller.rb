@@ -1,5 +1,9 @@
 class CategorysController < ApplicationController
 
+  def index
+    @category = Category.all
+  end
+
   def new
     @category = Category.new
   end
@@ -7,9 +11,9 @@ class CategorysController < ApplicationController
   def create
     @category = Category.new(category_params)
     if @category.save
-      render :index 
+      render '/ideas' 
     else
-      render :index
+      render '/ideas'
     end
   end
 

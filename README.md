@@ -44,7 +44,7 @@
 ![画像1](https://github.com/yoheioda0127/idea_app/blob/master/%E7%94%BB%E5%83%8F1.png)  
 ↑画像1. トップ画面  
 ![画像2](https://github.com/yoheioda0127/idea_app/blob/master/%E7%94%BB%E5%83%8F2.png)  
-↑画像2. 機能展開時  
+↑画像2. アイディア詳細展開時  
 ![gif画像1](https://github.com/yoheioda0127/idea_app/blob/master/gif%E7%94%BB%E5%83%8F1.gif)  
 ↑gif画像1. 機能デモ（その1）
 

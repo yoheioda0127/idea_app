@@ -1,5 +1,4 @@
 class CategorysController < ApplicationController
-
   def index
     @category = Category.all
   end
@@ -11,7 +10,7 @@ class CategorysController < ApplicationController
   def create
     @category = Category.new(category_params)
     if @category.save
-      render '/ideas' 
+      render '/ideas'
     else
       render '/ideas'
     end
@@ -22,5 +21,4 @@ class CategorysController < ApplicationController
   def category_params
     params.permit(:name)
   end
-
 end

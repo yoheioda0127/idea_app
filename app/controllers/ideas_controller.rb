@@ -1,7 +1,6 @@
 class IdeasController < ApplicationController
-  
   def index
-    @ideas = Idea.all.order("created_at DESC")
+    @ideas = Idea.all.order('created_at DESC')
   end
 
   def new
@@ -18,11 +17,11 @@ class IdeasController < ApplicationController
   end
 
   def search
-    if params[:category_id].present?
-      @idea = Idea.where('category_id LIKE ?', "%#{params[:id]}%")
-    else
-      @idea = Idea.none
-    end
+    @idea = if params[:category_id].present?
+              Idea.where('category_id LIKE ?', "%#{params[:id]}%")
+            else
+              Idea.none
+            end
   end
 
   def destroy
@@ -31,11 +30,9 @@ class IdeasController < ApplicationController
     redirect_to root_path
   end
 
-  
   private
 
   def idea_params
     params.require(:idea).permit(:category_id, :body)
   end
-
 end

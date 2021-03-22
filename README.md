@@ -1,5 +1,5 @@
 # 課題説明
-![TOP](https://github.com/yoheioda0127/idea_app/blob/master/readme%E3%83%AD%E3%82%B3%E3%82%99.png)  
+![readmeロゴ](readmeロゴ.png)  
 ## 開発したAPI名
 「ピカッと」
 
@@ -59,12 +59,11 @@ rails db:seed
 トップページには、全てのアイディアを、昇順で表示しています（画像1）。  
 本ページにて、「アイディア詳細閲覧」、「アイディアの削除」、「カテゴリー別のソート（未実装）」を行うことができます（画像2、gif画像1）。  
 画面左上のオレンジの「＋」ボタンは、新規アイディア登録ページへのリンクです。  
-![画像１](画像1.png)
-![画像1](https://github.com/yoheioda0127/idea_app/blob/master/%E7%94%BB%E5%83%8F1.png)  
+![画像１](画像1.png)  
 ↑画像1. トップ画面  
-![画像2](https://github.com/yoheioda0127/idea_app/blob/master/%E7%94%BB%E5%83%8F2.png)  
+![画像2](画像2.png)  
 ↑画像2. アイディア詳細展開時  
-![gif画像1](https://github.com/yoheioda0127/idea_app/blob/master/gif%E7%94%BB%E5%83%8F1.gif)  
+!![gif画像１](gif画像1.gif)  
 ↑gif画像1. 機能デモ（その1）
 
 ### アイディア登録画面＋新規カテゴリー追加画面
@@ -73,11 +72,11 @@ rails db:seed
 下半分がカテゴリーです。  
 また、投稿がないときは、一覧ページに投稿を促すメッセージが出力されます（画像４）。   
 
-![画像3](https://github.com/yoheioda0127/idea_app/blob/master/%E7%94%BB%E5%83%8F3.png)  
+![画像3](画像3.png)  
 ↑画像3.アイディア登録画面＋新規カテゴリー追加画面 
-![画像4](https://github.com/yoheioda0127/idea_app/blob/master/%E7%94%BB%E5%83%8F4.png)  
-↑画像4. トップ画面（投稿無し）  
-![gif画像2](https://github.com/yoheioda0127/idea_app/blob/master/gif%E7%94%BB%E5%83%8F2.gif)  
+![画像4](画像4.png)  
+↑画像4. トップ画面（投稿無し） 
+!![gif画像2](gif画像2.gif)  
 ↑gif画像2. 機能デモ（その2）アイディア登録  
 
 ## 工夫点

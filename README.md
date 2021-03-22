@@ -32,7 +32,7 @@
 - HTML
 - CSS
 - JavaScript
-- MySQL 5.6
+- MySQL 5.6  
 【その他】  
 - macOS Catalina 10.15.7
 - Visual Studio Code

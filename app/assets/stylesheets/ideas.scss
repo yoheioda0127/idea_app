@@ -4,7 +4,7 @@
   padding-bottom: 20px;
   margin: 5px auto;
   background-color: rgb(255, 255, 255);
-  
+  // 上部ヘッダーここから↓
   .top-wrapper{
     background-color: rgb(255, 254, 221);
     height: 100px;
@@ -40,7 +40,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      
 
       .sort-pull{
         width: 100px;
@@ -53,8 +52,9 @@
       }
     }
   }
+  // 上部ヘッダーここまで↑
 
-
+  // 投稿部分ここから↓
   .index-wrapper{
     margin: 20px 70px;
     padding: 20px 40px;
@@ -117,7 +117,7 @@
           }
         }
       }
-      // 内容展開ボタン
+      // 内容展開ボタンここから↓
       .body-wrapper {
         padding: 10px 40px;
         position:relative;
@@ -155,9 +155,9 @@
           font-size: 20px;
         }
       }
-      // 内容展開ボタン
+      // 内容展開ボタンここまで↑
     }
-    
+    // 未投稿時のメッセージここから↓
     .index-dummy-word {
       display: flex;
       justify-content: center;
@@ -167,7 +167,10 @@
       color: rgb(151, 150, 150);
       line-height: 60px;
     }
-  }
+  }  // 未投稿時のメッセージここまで↑
+  // 投稿部分ここまで↑
+
+  // 投稿画面ここから↓
   .new-sort-box{
     margin-top: 20px;
     width: 100px;
@@ -214,7 +217,9 @@
     color: rgb(6, 43, 255);
   }
 }
+  // 投稿画面ここまで↑
 
+  // 右下アプリロゴ↓
 .app-logo-box {
   width: 120px;
   text-align: center;

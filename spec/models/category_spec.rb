@@ -10,12 +10,10 @@ describe Category do
       it "nameがあればcategoryは保存される（1）" do
         expect(@category).to be_valid
       end
-      #ファクトリーボットの動作確認↓
       it "nameがあればcategoryは保存される（2）" do
         category = Category.build(:category)
         category.valid?
       end
-      #ファクトリーボットの動作確認↓
       it "nameが8文字以下ならばcategoryは保存される" do
         category = Category.build(:category)
         @category.name = 'あああああああ'

@@ -19,11 +19,30 @@
 ## 課題未達成部分
 - カテゴリー登録機能の一意性制約
 - カテゴリー別のソート機能
-- テストコードの記述（モデルのみ記述済み）
+- テストコードの記述（**モデルのみ記述済み**）
 - エラーレスポンス確認
 
 ## 不具合（改修予定）
 - 全文表示展開が「先頭のアイディア」のみ可能。
+
+## 開発環境
+【言語】  
+- Ruby 2.6.5
+- Ruby on Rails 6.0.3.4
+- HTML
+- CSS
+- JavaScript
+- MySQL 5.6
+【その他】  
+- macOS Catalina 10.15.7
+- Visual Studio Code
+- Github  
+
+## Cloneの作成
+
+```
+% git clone https://github.com/yoheioda0127/idea_app.git
+```
 
 ## テーブル設計
 ### Ideasテーブル

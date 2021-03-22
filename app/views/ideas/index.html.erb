@@ -1,12 +1,12 @@
 <div class = "whole-wrapper">
-  
-    <%# <h1>検索ボックス</h1> %>
+    <%# ヘッダー %>
     <%= form_with url: search_ideas_path, method: :get, local: true do |f| %>
     <div class= "top-wrapper">
+        <%# 投稿ボタン「+」 %>
         <div class="new-box">
           <%= link_to '+', "/ideas/new", class: "new-button" %>
         </div>
-        
+        <%# ソートボタン「ソート」【←機能未実装です。間に合いませんでした。】 %>
         <div class= "sort-box">
           <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class: "sort-pull", id:"weather_id"}) %>
           <%= f.submit :ソートする, class: "sort-button" %>
@@ -22,17 +22,17 @@
           <div class="index-box-contents"> 
             <div class="index-contents">
               <div class="index-contents-body">
-                ◯　<%= idea.body.truncate(8) %>
+                ◯　<%= idea.body.truncate(8) %>  <%# ←アイディア本文見出し %>
               </div>
               <div class = "right-contents"> 
                 <div class = "category-badge">
-                  <%= idea.category.name %>
+                  <%= idea.category.name %>  <%# ←カテゴリーのバッジ %>
                 </div>
                 <div class = "post-date">
-                  <%= idea.created_at.strftime('%Y年%m月%d日')%>
+                  <%= idea.created_at.strftime('%Y年%m月%d日')%>  <%# ←アイディア投稿日 %>
                 </div>
                 <div>
-                  <%= button_to "削除する", idea_path(idea.id), class: "delete-button", data: {confirm: "アイディアを削除しますか?"}, method: :delete %>
+                  <%= button_to "削除する", idea_path(idea.id), class: "delete-button", data: {confirm: "アイディアを削除しますか?"}, method: :delete %>    <%# ←アイディアの削除ボタン %>
                 </div>
               </div>
             </div>
@@ -41,12 +41,12 @@
             
               <div class="open-checked">
                 <label for="label-box">
-                  <span class="body-open-button">全文を表示</span>
+                  <span class="body-open-button">全文を表示</span>  <%# ←アイディア本文展開ボタン %>
                 </label>
                 <input type="checkbox" id="label-box"/>
 
                 <div class="appear">
-                  <%= safe_join(idea.body.split("\n"),tag(:br)) %>
+                  <%= safe_join(idea.body.split("\n"),tag(:br)) %>  <%# ←アイディア本文。改行も反映して表示できます。 %>
                 </div>
               </div>
 
@@ -56,11 +56,12 @@
         <%end%>
       </div>
     <%else%>
+      <%# 未投稿時のメッセージ %>
       <div class="index-dummy-word">まだアイディアがありません。<br>あなたのアイディアを記録しましょう！</div>
     <%end%>
   </div>
 </div>
-
+<%# 右下のアプリロゴ %>
 <div class='app-logo-box'>
     <%= link_to image_tag("app-logo.png", class: "app-logo-icon"), "/" %>
 </div>

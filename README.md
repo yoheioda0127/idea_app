@@ -75,7 +75,7 @@ rails db:seed
 ![画像3](https://github.com/yoheioda0127/idea_app/blob/master/%E7%94%BB%E5%83%8F3.png)  
 ↑画像3.アイディア登録画面＋新規カテゴリー追加画面 
 ![画像4](https://github.com/yoheioda0127/idea_app/blob/master/%E7%94%BB%E5%83%8F4.png)  
-↑画像4. トップ画面
+↑画像4. トップ画面  
 ![gif画像2](https://github.com/yoheioda0127/idea_app/blob/master/gif%E7%94%BB%E5%83%8F2.gif)  
 ↑gif画像2. 機能デモ（その2）アイディア登録  
 
